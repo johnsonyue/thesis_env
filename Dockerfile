@@ -13,7 +13,6 @@ RUN mkdir -p /home/thesis_env
 WORKDIR $THESIS_ENV
 RUN git clone http://github.com/johnsonyue/thesis_analyzer
 WORKDIR $THESIS_ENV/thesis_analyzer/analyzer/
-RUN git clone http://github.com/johnsonyue/thesis_env
 RUN cat thesis_env.tar.gz.* | tar zxvf - & rm thesis_env.tar.gz
 ##IP2Location.
 WORKDIR IP2Location-Python-master/ 
