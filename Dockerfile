@@ -12,8 +12,10 @@ ENV THESIS_ENV=/home/thesis_env/
 RUN mkdir -p /home/thesis_env
 WORKDIR $THESIS_ENV
 RUN git clone http://github.com/johnsonyue/thesis_analyzer
+VOLUME $THESIS_ENV/temp
+COPY thesis_env.tar.gz.* $THESIS_ENV/temp
 WORKDIR $THESIS_ENV/thesis_analyzer/analyzer/
-RUN cat thesis_env.tar.gz.* | tar zxvf - & rm thesis_env.tar.gz
+RUN cat $THESIS_ENV/temp/thesis_env.tar.gz.* | tar zxvf -
 ##IP2Location.
 WORKDIR IP2Location-Python-master/ 
 RUN python setup.py install
