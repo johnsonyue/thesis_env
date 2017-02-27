@@ -5,7 +5,7 @@
 
 * To split:
 
-	tar zcvf - thesis_env/ | split -d -a 1 -n 4 - thesis_env.tar.gz.
+	tar zcvf - thesis_env/ | split -d -a 1 -b 25MB - thesis_env.tar.gz.
 	
 * To combine:
 	
