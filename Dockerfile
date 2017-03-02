@@ -13,7 +13,7 @@ RUN mkdir -p /home/thesis_env
 WORKDIR $THESIS_ENV
 RUN git clone http://github.com/johnsonyue/thesis_analyzer
 VOLUME $THESIS_ENV/temp
-COPY thesis_env.tar.gz.* $THESIS_ENV/temp
+COPY thesis_env.tar.gz.* $THESIS_ENV/temp/
 WORKDIR $THESIS_ENV/thesis_analyzer/analyzer/
 RUN cat $THESIS_ENV/temp/thesis_env.tar.gz.* | tar zxvf -
 ##IP2Location.
