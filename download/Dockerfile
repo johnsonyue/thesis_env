@@ -15,8 +15,9 @@ RUN git clone http://github.com/johnsonyue/env
 ##Vim.
 ENV TERM=xterm-256color
 COPY vimrc molokai.vim $THESIS_ENV
-RUN mkdir -p ~/.vim/ & cp vimrc ~/.vim/
-RUN mkdir -p ~/.vim/colors/ & cp molokai.vim ~/.vim/colors/
+RUN mkdir -p ~/.vim/colors/
+RUN cp vimrc ~/.vim/
+RUN cp molokai.vim ~/.vim/colors
 
 #use default entrypoint: /bin/sh -c
 CMD ["/bin/bash"]
