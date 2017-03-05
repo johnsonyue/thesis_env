@@ -4,7 +4,7 @@ MAINTAINER johnsonyue version: 0.01
 
 #replace default apt source & install necessary packages.
 RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
-RUN apt-get update && apt-get install -y vim git tar python python-setuptools screen
+RUN apt-get update && apt-get install -y vim git tar python python-setuptools python-networkx build-essential automake screen
 
 #setup code env.
 ##source.
@@ -23,6 +23,11 @@ COPY vimrc molokai.vim $THESIS_ENV
 RUN mkdir -p ~/.vim/colors/
 RUN cp vimrc ~/.vim/
 RUN cp molokai.vim ~/.vim/colors
+
+##Scamper.
+WORKDIR scamper-cvs-20141211e/
+RUN ./configure & make & make install
+WORKDIR ../
 
 ##IP2Location.
 WORKDIR IP2Location-Python-master/ 
