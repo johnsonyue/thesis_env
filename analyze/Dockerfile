@@ -11,10 +11,10 @@ RUN apt-get update && apt-get install -y vim git tar python python-setuptools sc
 ENV THESIS_ENV=/home/thesis_env/
 RUN mkdir -p /home/thesis_env
 WORKDIR $THESIS_ENV
-RUN git clone http://github.com/johnsonyue/thesis_analyzer
+RUN git clone http://github.com/johnsonyue/env
 RUN mkdir $THESIS_ENV/temp/
 COPY thesis_env.tar.gz.* $THESIS_ENV/temp/
-WORKDIR $THESIS_ENV/thesis_analyzer/analyzer/
+WORKDIR $THESIS_ENV/env/analyze/
 RUN cat $THESIS_ENV/temp/thesis_env.tar.gz.* | tar zxvf -
 RUN rm -r $THESIS_ENV/temp/
 ##Vim.
