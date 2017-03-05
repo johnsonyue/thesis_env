@@ -26,7 +26,9 @@ RUN cp molokai.vim ~/.vim/colors
 
 ##Scamper.
 WORKDIR scamper-cvs-20141211e/
-RUN ./configure & make & make install
+RUN ./configure
+RUN make
+RUN make install
 WORKDIR ../
 
 ##IP2Location.
