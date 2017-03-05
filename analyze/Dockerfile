@@ -19,7 +19,11 @@ RUN cat $THESIS_ENV/temp/thesis_env.tar.gz.* | tar zxvf -
 RUN rm -r $THESIS_ENV/temp/
 ##Vim.
 ENV TERM=xterm-256color
-RUN mkdir -p ~/.vim/ & cp vimrc molokai.vim ~/.vim/
+COPY vimrc molokai.vim $THESIS_ENV
+RUN mkdir -p ~/.vim/colors/
+RUN cp vimrc ~/.vim/
+RUN cp molokai.vim ~/.vim/colors
+
 ##IP2Location.
 WORKDIR IP2Location-Python-master/ 
 RUN python setup.py install
