@@ -30,6 +30,8 @@ RUN ./configure
 RUN make
 RUN make install
 WORKDIR ../
+RUN echo "include /usr/local/lib" >> /etc/ld.so.conf
+RUN ldconfig
 
 ##IP2Location.
 WORKDIR IP2Location-Python-master/ 
