@@ -10,3 +10,7 @@
 * To combine:
 	
 	cat thesis_env.tar.gz.* > thesis_env.tar.gz
+
+* To download:
+	
+	wget https://codeload.github.com/johnsonyue/thesis_env/zip/master
