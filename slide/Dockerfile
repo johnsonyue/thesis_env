@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y vim git tar python
 #setup code env.
 ENV HOME=/home/slide/
 ENV ANALYZE=/home/thesis_env/env/analyze/
+WORKDIR /home/
 RUN git clone http://github.com/johnsonyue/slide
 WORKDIR $HOME
 
@@ -21,7 +22,7 @@ RUN rm -r temp/
 
 ##Vim.
 ENV TERM=xterm-256color
-COPY vimrc molokai.vim $CWD
+COPY vimrc molokai.vim $HOME
 RUN mkdir -p ~/.vim/colors/
 RUN cp vimrc ~/.vim/
 RUN cp molokai.vim ~/.vim/colors
