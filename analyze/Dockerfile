@@ -3,7 +3,7 @@ FROM ubuntu:latest
 MAINTAINER johnsonyue version: 0.01
 
 #replace default apt source & install necessary packages.
-RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
+RUN sed -i 's/archive.ubuntu.com/debian.ustc.edu.cn/g' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y vim git tar python python-setuptools python-networkx build-essential automake screen zlib1g-dev libbz2-dev
 
 #setup code env.
@@ -19,7 +19,7 @@ RUN cat $THESIS_ENV/temp/thesis_env.tar.gz.* | tar zxvf -
 RUN rm -r $THESIS_ENV/temp/
 ##Vim.
 ENV TERM=xterm-256color
-COPY vimrc molokai.vim $THESIS_ENV
+COPY vimrc molokai.vim $THESIS_ENV/env/analyze/
 RUN mkdir -p ~/.vim/colors/
 RUN cp vimrc ~/.vim/
 RUN cp molokai.vim ~/.vim/colors
