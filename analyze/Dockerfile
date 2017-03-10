@@ -4,7 +4,7 @@ MAINTAINER johnsonyue version: 0.01
 
 #replace default apt source & install necessary packages.
 RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
-RUN apt-get update && apt-get install -y vim git tar python python-setuptools python-networkx build-essential automake screen
+RUN apt-get update && apt-get install -y vim git tar python python-setuptools python-networkx build-essential automake screen zlib1g-dev libbz2-dev
 
 #setup code env.
 ##source.
@@ -32,6 +32,10 @@ RUN make install
 WORKDIR ../
 RUN echo "include /usr/local/lib" >> /etc/ld.so.conf
 RUN ldconfig
+##bgpdump
+WORKDIR bgpdump/
+RUN ./bootstrap.sh && make && make install
+WORKDIR ../
 
 ##IP2Location.
 WORKDIR IP2Location-Python-master/ 
