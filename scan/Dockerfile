@@ -1,10 +1,10 @@
-FROM ubuntu:latest
+FROM ubuntu:14.04
 
 MAINTAINER johnsonyue version: 0.01
 
 #replace default apt source & install necessary packages.
 RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
-RUN apt-get update && apt-get install -y vim git tar python
+RUN apt-get update && apt-get install -y vim git tar python net-tools time wget build-essential libbz2-dev zlib1g-dev perl ruby ruby-dev
 
 #setup code env.
 ##source.
