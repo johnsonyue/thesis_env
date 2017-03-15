@@ -3,7 +3,8 @@
  * which makes gem not backward compatible with old '.gem' package.
 
 ##to build ubuntu:14.04
- * 
+ *  
+
 		root# git clone https://github.com/tianon/docker-brew-ubuntu-core.git
 		root# ./update.sh
 		
