@@ -4,7 +4,7 @@ MAINTAINER johnsonyue version: 0.01
 
 #replace default apt source & install necessary packages.
 RUN sed -i 's/archive.ubuntu.com/debian.ustc.edu.cn/g' /etc/apt/sources.list
-RUN apt-get update && apt-get install -y vim git tar python python-setuptools python-networkx build-essential automake screen zlib1g-dev libbz2-dev
+RUN apt-get update && apt-get install -y vim git tar python python-dev python-setuptools python-networkx build-essential automake screen zlib1g-dev libbz2-dev
 
 #setup code env.
 ##source.
