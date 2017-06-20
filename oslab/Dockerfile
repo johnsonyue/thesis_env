@@ -31,6 +31,9 @@ RUN wget https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.6.9
     tar zxvf bochs-2.6.9.tar.gz && cd bochs-2.6.9 && \ 
     ./configure --enable-debugger --enable-disasm LDFLAGS='-pthread' && \
     make && make install
+#code.
+ADD code.tar.gz ./
+RUN tar zxvf code.tar.gz
 
 WORKDIR $HOMEDIR
 #use default entrypoint: /bin/sh -c
