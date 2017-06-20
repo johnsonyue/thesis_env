@@ -15,3 +15,5 @@ reused queeno's Dockerfile
 		root# DISPLAY=:1 bochs -f bochs/bochsrc.bxrc
 		
 		#Log in from a vnc client, and there's your x11 window!
+
+![](screenshot.png)
