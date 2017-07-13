@@ -37,6 +37,12 @@ WORKDIR bgpdump/
 RUN ./bootstrap.sh && make && make install
 WORKDIR ../
 
+##KAPAR
+WORKDIR kapar-0.5/
+RUN ./configure --with-scamper=../scamper-cvs-20141211e/scamper/
+RUN make
+WORKDIR ../
+
 ##IP2Location.
 WORKDIR IP2Location-Python-master/ 
 RUN python setup.py install
